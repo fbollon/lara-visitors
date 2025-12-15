@@ -1,0 +1,6 @@
+/tests export-ignore
+/.github export-ignore
+/README.md export-ignore
+/CHANGELOG.md export-ignore
+/.editorconfig export-ignore
+/phpunit.xml.dist export-ignore

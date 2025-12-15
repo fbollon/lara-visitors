@@ -1,0 +1,12 @@
+/vendor/
+/node_modules/
+/composer.lock
+/.idea
+/.vscode
+/.phpunit.result.cache
+.phpunit.cache
+.phpunit.cache/*
+.phpunit.cache/*
+/coverage/
+/phpunit.xml
+LaraVisitors.code-workspace

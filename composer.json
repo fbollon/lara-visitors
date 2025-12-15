@@ -1,0 +1,32 @@
+{
+    "name": "fbollon/lara-visitors",
+    "description": "Laravel package that provides a dashboard and statistics for visits recorded by shetabit/visitor.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["laravel", "visitors", "analytics", "dashboard", "statistics", "shetabit", "visitor"],
+    "homepage": "https://github.com/fbollon/lara-visitors",
+    "authors": [
+        {"name": "Frédéric Bollon", "role": "Developer"}
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^11.0|^12.0",
+        "illuminate/routing": "^11.0|^12.0",
+        "shetabit/visitor": "^4.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "Fbollon\\LaraVisitors\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Fbollon\\LaraVisitors\\LaraVisitorsServiceProvider"
+            ]
+        }
+    },
+    "require-dev": {
+        "laravel/pint": "^1.26"
+    }
+}
