@@ -99,6 +99,7 @@ This will create `config/laravisitors.php` where you can customize:
 - **access_middleware**: Middlewares applied to package routes.
 - **visits_table**: Table name for visits (should match shetabit/visitor).
 - **user_model**: Your User model class.
+- **user_display_attribute**: User attribute to display in dashboard.
 
 Optional: Publish assets (CSS/JS) if you want to customize them:
 
@@ -151,6 +152,7 @@ return [
     'access_middleware' => ['web', 'auth', 'laravisitors.access'],
     'visits_table' => env('LARAVISITORS_TABLE', 'shetabit_visits'),
     'user_model' => env('LARAVISITORS_USER_MODEL', App\Models\User::class),
+    'user_display_attribute' => 'name',
 ];
 ```
 

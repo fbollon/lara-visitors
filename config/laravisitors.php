@@ -62,4 +62,14 @@ return [
 
     'user_model' => env('LARAVISITORS_USER_MODEL', App\Models\User::class),
 
+    
+    /*
+    |--------------------------------------------------------------------------
+    | User attribute to display
+    |--------------------------------------------------------------------------
+    | Example: 'name', 'email', 'firstname', etc.
+    */
+    
+    'user_display_attribute' => 'name',
+
 ];

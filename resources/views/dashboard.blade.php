@@ -77,7 +77,6 @@
                         <div class="float-start"><i class="fa-solid fa-link fa-2x"></i></div>
                         <h5 class="card-title">{{ __('laravisitors::messages.online_visitors') }}</h5>
                         <p class="card-text fs-4">{{ $onlineVisitors->count() }}
-
                             @if ($onlineVisitors->count() > 0)
                                 <button type="button" class="btn btn-link p-0 m-0 align-baseline" data-bs-toggle="modal"
                                     data-bs-target="#onlineVisitor">
@@ -100,7 +99,7 @@
                     </div>
                     <div class="modal-body">
                         @foreach ($onlineVisitors as $visitor)
-                            {{ $visitor->firstname ?? '' }} {{ $visitor->lastname ?? '' }}<br>
+                            {{ data_get($visitor, config('laravisitors.user_display_attribute')) }}<br>
                         @endforeach
                     </div>
                     <div class="modal-footer">
