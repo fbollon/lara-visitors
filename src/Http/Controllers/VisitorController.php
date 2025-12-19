@@ -18,6 +18,8 @@ class VisitorController extends BaseController
         $visitsTable = config('laravisitors.visits_table');
         $userModel = config('laravisitors.user_model');
         $userTable = (new $userModel)->getTable();
+        $display = config('laravisitors.user_display_attribute', 'name');
+        $userColumn = "{$userTable}.{$display}";
         
         $totalVisits = Visit::dateRange($start, $end)->count();
 
@@ -58,11 +60,14 @@ class VisitorController extends BaseController
             ->get();
 
         $userStats = Visit::query()
-            ->leftJoin($userTable, $visitsTable.'.visitor_id', '=', $userTable.'.id')
-            ->select($userTable.'.name as user_name', DB::raw('count(*) as visits'))
-            ->dateRange($start, $end)     
-            ->whereNotNull($visitsTable.'.visitor_id')
-            ->groupBy($userTable.'.name')
+            ->leftJoin($userTable, "{$visitsTable}.visitor_id", '=', "{$userTable}.id")
+            ->select([
+                DB::raw("{$userColumn} as user_name"),
+                DB::raw('COUNT(*) as visits'),
+            ])
+            ->dateRange($start, $end)
+            ->whereNotNull("{$visitsTable}.visitor_id")
+            ->groupBy($userColumn)
             ->orderBy('visits', 'desc')
             ->get();
 
@@ -92,6 +97,7 @@ class VisitorController extends BaseController
         $visitsTable = config('laravisitors.visits_table');
         $userModel = config('laravisitors.user_model');
         $userTable = (new $userModel)->getTable();
+        $display = config('laravisitors.user_display_attribute', 'name');
 
         $visits = Visit::query()
             ->leftJoin($userTable, "$visitsTable.visitor_id", '=', "$userTable.id")
@@ -101,7 +107,7 @@ class VisitorController extends BaseController
                 "$visitsTable.device",
                 "$visitsTable.ip",
                 "$visitsTable.created_at",
-                "$userTable.name as user_name"
+                DB::raw("{$userTable}.{$display} as user_name"),
             )
             ->dateRange($start, $end)
             ->orderBy("$visitsTable.created_at", 'asc')
