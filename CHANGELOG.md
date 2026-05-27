@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.0.3] - 2026-05-27
+### Changed
+- Removed temporary constraint on `mobiledetect/mobiledetectlib`.
+- Updated to latest compatible version of `shetabit/visitor`
+
 ## [1.0.2] - 2026-05-05
 ### Fixed
 - Temporarily constrained `mobiledetect/mobiledetectlib` to `<4.9` to prevent

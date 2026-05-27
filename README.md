@@ -32,19 +32,6 @@ composer require fbollon/lara-visitors
 ```
 This will also install [shetabit/visitor](https://github.com/shetabit/visitor)
 
-
-⚠️ **Temporary constraint**
-
-`mobiledetect/mobiledetectlib` is temporarily limited to `< 4.9`
-due to an incompatibility with `shetabit/visitor 4.x`
-under PHP ≥ 8.1 (method signature mismatch).
-
-This constraint will be removed once
-`shetabit/visitor` releases a compatible stable version.
-
-(See upstream issue: https://github.com/shetabit/visitor/issues/76)
-
-
 ---
 
 ## ⚙️ Configuration
