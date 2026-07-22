@@ -9,6 +9,7 @@ class LaraVisitorsServiceProvider extends ServiceProvider
     public function boot()
     {
 
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravisitors');
         $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
         $this->loadTranslationsFrom(__DIR__.'/../lang', 'laravisitors');

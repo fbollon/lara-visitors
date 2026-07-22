@@ -20,6 +20,7 @@ LaraVisitors is a Laravel package that provides a dashboard and statistics for v
 ## ✅ Requirements
 - Laravel 11 or higher
 - PHP 8.2+
+- shetabit/visitor 4.5.6 or higher
 
 ---
 
@@ -30,7 +31,8 @@ Install package via Composer:
 ```bash
 composer require fbollon/lara-visitors
 ```
-This will also install [shetabit/visitor](https://github.com/shetabit/visitor)
+
+This package requires [shetabit/visitor](https://github.com/shetabit/visitor) and will install it automatically if it is not already present.
 
 ---
 
@@ -155,6 +157,32 @@ return [
     'user_display_attribute' => 'name',
 ];
 ```
+
+---
+
+### 🔄 Upgrading
+
+#### Upgrade to 1.1
+
+Version 1.1 introduces:
+
+- Support for `shetabit/visitor` 4.5.6 or higher
+- Automatic loading of LaraVisitors migrations
+- Improved dashboard performance through a database index on the `created_at` column of the visits table
+
+Update the package:
+
+```bash
+composer update fbollon/lara-visitors
+```
+Run database migrations:
+
+```bash
+php artisan migrate
+```
+The migration included with LaraVisitors 1.1 automatically creates an index on the created_at column used by dashboard statistics queries.
+
+This can significantly improve dashboard performance on applications with a large number of visit records.
 
 ---
 

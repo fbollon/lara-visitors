@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.1.0] - 2026-07-22
+
+### Added
+
+- Automatic loading of package migrations using `loadMigrationsFrom()`
+- Database index on `shetabit_visits.created_at`
+
+### Improved
+
+- Better dashboard performance when filtering statistics by date range
+
 ## [1.0.3] - 2026-05-27
 ### Changed
 - Removed temporary constraint on `mobiledetect/mobiledetectlib`.
