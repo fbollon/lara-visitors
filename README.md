@@ -162,7 +162,7 @@ return [
 
 ### 🔄 Upgrading
 
-#### Upgrade to 1.1
+#### Upgrade to 1.1.1
 
 Version 1.1 introduces:
 

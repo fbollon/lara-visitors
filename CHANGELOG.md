@@ -1,5 +1,12 @@
 # Changelog
 
+
+## [1.1.1] - 2026-07-22
+
+### Fixed
+
+- Re-release of version 1.1.0 due to packaging/tagging issue.
+
 ## [1.1.0] - 2026-07-22
 
 ### Added
